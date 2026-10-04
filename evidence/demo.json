@@ -1,0 +1,266 @@
+{
+  "recorded_at": "2026-10-04T18:45:51.099Z",
+  "workflow_duration_seconds": 76.563,
+  "result": "completed",
+  "fictional": true,
+  "fixture": "help.png",
+  "fixture_sha256": "6b75e9061200c352cf9aa618a53f243572bbfa7bc71ecf8b67bc5aa1a5bf1a09",
+  "runtime_app_sha256": "133698711ac8fb8aa53bcc20358e25286394f08619132aa7271bbd09f3fb433d",
+  "recording": "Continuous actual browser screen recording; no mocked OCR or changed playback speed. Reading pauses are included.",
+  "tooling_reuse": "Shiftproof Playwright CLI orchestration pattern only; no Shiftproof product code.",
+  "scenes": [
+    {
+      "start_seconds": 0.074,
+      "title": "Recorded walkthrough \u00b7 A fictional screenshot",
+      "detail": "Actual browser actions and local scans. Pauses give you time to read."
+    },
+    {
+      "start_seconds": 5.085,
+      "title": "1 \u00b7 Choose an image",
+      "detail": "This example and its contact details are fictional. Source pixels stay in browser memory."
+    },
+    {
+      "start_seconds": 11.166,
+      "title": "Scan for English email and phone lines",
+      "detail": "This step uses real local OCR. The recording pauses after completion so you can review."
+    },
+    {
+      "start_seconds": 15.883,
+      "title": "2 \u00b7 Review the suggested masks",
+      "detail": "Recognised email and phone lines are selected. You can keep or remove each mask."
+    },
+    {
+      "start_seconds": 21.914,
+      "title": "Every suggestion is your choice",
+      "detail": "Toggling the phone suggestion changes the mask. It is selected again for this export."
+    },
+    {
+      "start_seconds": 28.013,
+      "title": "Add details the scan does not cover",
+      "detail": "The badge code is outside supported patterns. A manual rectangle covers it."
+    },
+    {
+      "start_seconds": 35.952,
+      "title": "Look at the whole image",
+      "detail": "Names, faces, addresses, QR codes and missed text all require manual review."
+    },
+    {
+      "start_seconds": 41.983,
+      "title": "3 \u00b7 Confirm your review",
+      "detail": "The review checkbox is required. Any mask edit resets this acknowledgement."
+    },
+    {
+      "start_seconds": 48.068,
+      "title": "Create a fresh PNG and check its actual pixels",
+      "detail": "Opaque masks are flattened into the output. Real OCR scans that exported image."
+    },
+    {
+      "start_seconds": 53.423,
+      "title": "Inspect the exported preview",
+      "detail": "This real output contains the selected masks. The check found zero supported patterns here."
+    },
+    {
+      "start_seconds": 62.465,
+      "title": "Download the checked PNG",
+      "detail": "A new image is downloaded with a neutral filename, rather than the source file."
+    },
+    {
+      "start_seconds": 68.53,
+      "title": "The same OCR can miss the same detail twice",
+      "detail": "A zero result is not a privacy guarantee. Check the full image before sharing."
+    }
+  ],
+  "scan_wall_ms": 715,
+  "export_wall_ms": 355,
+  "scan_proof": {
+    "phase": "review",
+    "revision": 2,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      }
+    ],
+    "timings": {
+      "scanMs": 687.9000000953674,
+      "exportMs": null
+    },
+    "exportCheck": {
+      "status": "idle",
+      "patternCount": null,
+      "types": [],
+      "revision": null
+    },
+    "reviewAcknowledged": false,
+    "readyDownload": false,
+    "busy": false
+  },
+  "review_proof": {
+    "phase": "review",
+    "revision": 5,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r3",
+        "type": "manual",
+        "bbox": {
+          "x": 48,
+          "y": 408,
+          "width": 303,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "manual"
+      }
+    ],
+    "timings": {
+      "scanMs": 687.9000000953674,
+      "exportMs": null
+    },
+    "exportCheck": {
+      "status": "idle",
+      "patternCount": null,
+      "types": [],
+      "revision": null
+    },
+    "reviewAcknowledged": false,
+    "readyDownload": false,
+    "busy": false
+  },
+  "export_proof": {
+    "phase": "export-ready",
+    "revision": 5,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r3",
+        "type": "manual",
+        "bbox": {
+          "x": 48,
+          "y": 408,
+          "width": 303,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "manual"
+      }
+    ],
+    "timings": {
+      "scanMs": 687.9000000953674,
+      "exportMs": 277.2999999523163
+    },
+    "exportCheck": {
+      "status": "passed",
+      "patternCount": 0,
+      "types": [],
+      "revision": 5
+    },
+    "reviewAcknowledged": true,
+    "readyDownload": true,
+    "busy": false
+  },
+  "export_result_text": "Export check completed: no supported email or phone pattern was recognised in the output. This is not a privacy guarantee; inspect the preview before downloading.",
+  "manual_badge_rectangle": {
+    "x": 48,
+    "y": 408,
+    "width": 303,
+    "height": 43
+  },
+  "download": {
+    "file": "demo-export.png",
+    "suggested_filename": "scrim-redacted.png",
+    "sha256": "58fa683491b2377437f397630b3666f94203b156865bd51038e539ff11d6c287",
+    "bytes": 45365
+  },
+  "errors": [],
+  "successful_external_requests_claimed": false,
+  "external_requests": [],
+  "duration_seconds": 86.75,
+  "caption_method": "Caption PNG panels rendered with Pillow and composed below the unchanged browser screen using ffmpeg. No playback speed changes.",
+  "encoding_tool": "imageio-ffmpeg0.6.0 / bundled ffmpeg7.0.2; Pillow12.1.1; local DejaVu fonts",
+  "video": {
+    "file": "demo.webm",
+    "sha256": "be60cd937599cd141e677c4e80f50b73e7a565fd67f4e704db64bfd813c1611a",
+    "bytes": 2385646,
+    "width": 1280,
+    "height": 1030
+  }
+}

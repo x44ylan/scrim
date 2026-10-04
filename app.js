@@ -65,6 +65,7 @@ function changed() {
   $('review-confirm').checked = false;
   forgetExport();
   state.exportCheck = {status: 'idle', patternCount: null, types: [], revision: null};
+  $('export-result').hidden = !state.base;
   $('export-result').textContent = state.base ? 'Review the whole screenshot before checking an export.' : '';
   $('export-result').dataset.state = 'idle';
 }

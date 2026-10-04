@@ -38,12 +38,16 @@ The harder challenge is avoiding circular evidence: a second OCR pass is not ind
 
 The repository records actual browser E2E evidence, actual downloaded images and independently authored fictional ground truth. Checks cover real local-model inference, suggestion review, manual masks, review invalidation, import rejection, exported pixels and metadata, cancellation, missing model assets and offline operation. No ML response is mocked.
 
+69 browser E2E checks passed, and three actual downloaded PNGs passed independent pixel, opacity, dimension and metadata checks. The clean example detected both contacts; the split and faint examples missed complete contacts, and those failures remain visible in [the evaluation](https://github.com/x44ylan/scrim/blob/main/verification.md).
+
 Per-fixture outcomes and CPU timings describe these images only; they are not a general OCR accuracy or privacy claim. Small, split, rotated or faint text may be missed, and phone-like reference numbers can be false positives.
 
 The next useful validation would be observing real screenshot-sharing workflows and testing comprehension of the mask review and limits. That study has not happened; there are no fabricated testimonials or benefit estimates.
 
 ## Try it
 
-[Live workspace](https://x44ylan.com/scrim/) · [Public source and evidence](https://github.com/x44ylan/scrim) · [Research and model references](https://github.com/x44ylan/scrim/blob/main/research.md)
+[Live workspace](https://x44ylan.com/scrim/) · [Recorded walkthrough](https://x44ylan.com/scrim/demo.html) · [Public source and evidence](https://github.com/x44ylan/scrim) · [Research and model references](https://github.com/x44ylan/scrim/blob/main/research.md)
+
+The walkthrough is about 87 seconds of actual browser actions, local OCR, manual badge masking, and a checked PNG download. Reading pauses and explanatory captions are included; playback speed is unchanged. [Direct video file](https://x44ylan.com/scrim/demo.webm).
 
 The uploaded screenshots show the fictional example, reviewed masks and the flattened export. Solo entrant: Dylan; development and verification assistance: OpenAI Codex. Judging entries and award claims remain separate from technical prototype validation.

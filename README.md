@@ -2,7 +2,7 @@
 
 Review a screenshot before sharing it. Real English neural OCR runs on the device to suggest email and phone lines. Review those suggestions, draw any additional masks, and create a flattened PNG with a visible export check.
 
-[Live workspace](https://x44ylan.com/scrim/) · [Source and model provenance](vendor/manifest.json) · [Design evidence](research.md)
+[Live workspace](https://x44ylan.com/scrim/) · [Recorded walkthrough](https://x44ylan.com/scrim/demo.html) · [Source and model provenance](vendor/manifest.json) · [Design evidence](research.md)
 
 ## Try the complete workflow
 

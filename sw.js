@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE = 'scrim-2';
+const CACHE = 'scrim-3';
 const ROOT = new URL('./', self.location.href);
 const SHELL = ['index.html', 'style.css', 'app.js', 'vendor/tesseract.min.js', 'fixtures/help.png'];
 const STATIC = new Set([...SHELL, 'vendor/worker.min.js', 'vendor/lang/eng.traineddata.gz'].map(path => new URL(path, ROOT).pathname));

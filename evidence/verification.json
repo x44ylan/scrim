@@ -1,6 +1,6 @@
 {
   "result": "passed",
-  "verified_at": "2026-10-04T18:33:55.257Z",
+  "verified_at": "2026-10-04T18:45:32.212Z",
   "scope": "Fictional fixtures; real local Tesseract LSTM OCR; native files, browser downloads, cancellation, missing-model handling and offline reload.",
   "scaffolding_reuse": "Playwright CLI session/result/download pattern from Shiftproof only; no product code reused.",
   "ground_truth": {
@@ -177,6 +177,7 @@
   "checks": [
     "fixture ground truth was authored independently before OCR",
     "fictional demo loads its real image dimensions",
+    "loaded image shows the export review instruction",
     "demo is visibly labelled fictional",
     "native File/DataTransfer import starts with no stale masks",
     "export requires explicit review acknowledgement",
@@ -186,12 +187,15 @@
     "detected regions render editable review choices",
     "real detected contact suggestions start selected",
     "actual output OCR finds an unmasked phone and withholds the download",
+    "remaining-pattern export result is visible",
+    "real export check displays its pending result while running",
     "adding a numeric manual mask resets review acknowledgement",
     "keyboard numeric form creates a real selected manual region",
     "pointer drawing is verified on a CSS-scaled canvas",
     "scaled reversed pointer drawing maps to actual image coordinates",
     "pointer edit resets review acknowledgement",
     "actual OCR check of output pixels finishes with zero supported patterns",
+    "completed export result and review limitation are visible",
     "browser produces a real PNG download",
     "download has a neutral PNG filename",
     "edit invalidates a completed export and old download",
@@ -215,11 +219,13 @@
     "hard fixture produces an independently known harmless numeric false positive",
     "false positive is deselected and acknowledgement resets",
     "actual OCR check of output pixels finishes with zero supported patterns",
+    "completed export result and review limitation are visible",
     "browser produces a real PNG download",
     "download has a neutral PNG filename",
     "Clear remains available during actual OCR",
     "Clear cancels in-flight OCR and stale results cannot restore the image",
     "Clear removes review acknowledgement",
+    "Clear hides the previous export result",
     "missing local language asset produces an actual retryable model/cache error",
     "failed model loading preserves the source image and manual mask",
     "real local OCR completes without an error",
@@ -229,6 +235,7 @@
     "real local OCR completes without an error",
     "offline reload invokes the real cached neural model and detects both contacts",
     "actual OCR check of output pixels finishes with zero supported patterns",
+    "completed export result and review limitation are visible",
     "browser produces a real PNG download",
     "download has a neutral PNG filename",
     "workflow writes no image or OCR text to Web Storage",
@@ -278,10 +285,10 @@
         }
       ],
       "timings": {
-        "scanMs": 627.5,
+        "scanMs": 624.5,
         "exportMs": null
       },
-      "wall_ms": 658
+      "wall_ms": 664
     },
     {
       "fixture": "split.png",
@@ -307,10 +314,10 @@
         }
       ],
       "timings": {
-        "scanMs": 453.3000000715256,
+        "scanMs": 471.39999997615814,
         "exportMs": null
       },
-      "wall_ms": 493
+      "wall_ms": 516
     },
     {
       "fixture": "faint.png",
@@ -336,10 +343,10 @@
         }
       ],
       "timings": {
-        "scanMs": 470.39999997615814,
+        "scanMs": 486.39999997615814,
         "exportMs": null
       },
-      "wall_ms": 518
+      "wall_ms": 535
     }
   ],
   "exports": [
@@ -477,47 +484,11 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/93c30916-965a-4552-b12d-deaa569bbb85",
+      "url": "blob:http://127.0.0.1:8212/2127aeed-6473-4654-9e94-b3325aa2de2e",
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/5d906999-af97-4042-98ed-9bbf3a18fee1",
-      "method": "GET"
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
-      "method": "GET"
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
-      "method": "GET"
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/c4b374cf-a703-46b1-98cb-c8207a31ed62",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/0ebe2263-d3d7-42e7-acca-797f307bf94c",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/b7099091-f813-40d2-8346-02c03391b391",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/b550e032-7974-4c7e-96d2-95e1ab00b4db",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/bd71c299-22e5-47e7-aab4-bfaa32c807d8",
-      "method": "GET"
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/e650e583-800b-4871-92b5-53636a8e73e8",
+      "url": "blob:http://127.0.0.1:8212/9b3a8fd6-9f9b-4a52-8b05-9198b89f6e0e",
       "method": "GET"
     },
     {
@@ -533,7 +504,27 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/432883bb-dde5-4936-be00-6017d63fbc38",
+      "url": "blob:http://127.0.0.1:8212/d6d9b682-a783-494f-875f-44c39ede6335",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/d6eaae63-39aa-4102-abdc-b9e736873a1a",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/cf02021f-0845-4236-9a50-57465a9181bc",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/7eabfff7-cc2c-4f5b-a2a6-3727847f1ed4",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b4d697dd-c66c-4f08-bd52-98870789e308",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/ce417c9b-2251-4cf1-9725-84cadcc283e9",
       "method": "GET"
     },
     {
@@ -549,15 +540,31 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/fef0b97f-6015-44da-8864-33ea34bbcf2d",
+      "url": "blob:http://127.0.0.1:8212/0c1d2c28-af2f-4b8b-8e26-09960f0b0f9b",
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/5916504d-9a98-4dab-8fc9-13501bcc79de",
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/0b118359-e015-4ce9-9ab0-13de2a4a43a7",
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/cdf693fd-e6bb-41ae-b248-87082b268eeb",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/18af05c0-6f59-492d-a583-ac7a8cff6371",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/82c47afd-1296-4f97-aaac-07e926cb8827",
       "method": "GET"
     },
     {
@@ -609,7 +616,7 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8213/ad198915-5a19-4d0d-b34e-c4a5f0bb3380",
+      "url": "blob:http://127.0.0.1:8213/7d07da2c-4343-4707-8530-fee911e6bfcd",
       "method": "GET"
     },
     {
@@ -637,7 +644,7 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/0c04b577-2a64-4684-9435-ba523db546fd",
+      "url": "blob:http://127.0.0.1:8212/a472f359-fec6-45c1-b45d-67529be60e97",
       "method": "GET"
     },
     {
@@ -669,7 +676,7 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/d6b629db-5177-40c4-a0a5-808072011628",
+      "url": "blob:http://127.0.0.1:8212/d64247f5-0df0-44ea-8137-87939c43eab0",
       "method": "GET"
     },
     {
@@ -685,11 +692,11 @@
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/bdf35d51-abbc-437c-a5c4-3fcbcc14c356",
+      "url": "blob:http://127.0.0.1:8212/22df8e0b-3161-4648-8208-43de9f470259",
       "method": "GET"
     },
     {
-      "url": "blob:http://127.0.0.1:8212/c3047517-0f92-492b-a531-24a31ac8ed7c",
+      "url": "blob:http://127.0.0.1:8212/0b45b3b5-d7c1-4d86-af43-dcb46cee7a55",
       "method": "GET"
     }
   ],
@@ -703,11 +710,11 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:8212/app.js",
+      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
+      "url": "http://127.0.0.1:8212/app.js",
       "status": 200
     },
     {
@@ -731,47 +738,11 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/93c30916-965a-4552-b12d-deaa569bbb85",
+      "url": "blob:http://127.0.0.1:8212/2127aeed-6473-4654-9e94-b3325aa2de2e",
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/5d906999-af97-4042-98ed-9bbf3a18fee1",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
-      "status": 200
-    },
-    {
-      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/c4b374cf-a703-46b1-98cb-c8207a31ed62",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/0ebe2263-d3d7-42e7-acca-797f307bf94c",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/b7099091-f813-40d2-8346-02c03391b391",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/b550e032-7974-4c7e-96d2-95e1ab00b4db",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/bd71c299-22e5-47e7-aab4-bfaa32c807d8",
-      "status": 200
-    },
-    {
-      "url": "blob:http://127.0.0.1:8212/e650e583-800b-4871-92b5-53636a8e73e8",
+      "url": "blob:http://127.0.0.1:8212/9b3a8fd6-9f9b-4a52-8b05-9198b89f6e0e",
       "status": 200
     },
     {
@@ -787,7 +758,27 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/432883bb-dde5-4936-be00-6017d63fbc38",
+      "url": "blob:http://127.0.0.1:8212/d6d9b682-a783-494f-875f-44c39ede6335",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/d6eaae63-39aa-4102-abdc-b9e736873a1a",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/cf02021f-0845-4236-9a50-57465a9181bc",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/7eabfff7-cc2c-4f5b-a2a6-3727847f1ed4",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b4d697dd-c66c-4f08-bd52-98870789e308",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/ce417c9b-2251-4cf1-9725-84cadcc283e9",
       "status": 200
     },
     {
@@ -803,15 +794,31 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/fef0b97f-6015-44da-8864-33ea34bbcf2d",
+      "url": "blob:http://127.0.0.1:8212/0c1d2c28-af2f-4b8b-8e26-09960f0b0f9b",
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/5916504d-9a98-4dab-8fc9-13501bcc79de",
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/0b118359-e015-4ce9-9ab0-13de2a4a43a7",
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/cdf693fd-e6bb-41ae-b248-87082b268eeb",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/18af05c0-6f59-492d-a583-ac7a8cff6371",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/82c47afd-1296-4f97-aaac-07e926cb8827",
       "status": 200
     },
     {
@@ -847,7 +854,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:8213/app.js",
+      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
       "status": 200
     },
     {
@@ -855,7 +862,7 @@
       "status": 200
     },
     {
-      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
+      "url": "http://127.0.0.1:8213/app.js",
       "status": 200
     },
     {
@@ -863,7 +870,7 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8213/ad198915-5a19-4d0d-b34e-c4a5f0bb3380",
+      "url": "blob:http://127.0.0.1:8213/7d07da2c-4343-4707-8530-fee911e6bfcd",
       "status": 200
     },
     {
@@ -891,7 +898,7 @@
       "status": 503
     },
     {
-      "url": "blob:http://127.0.0.1:8212/0c04b577-2a64-4684-9435-ba523db546fd",
+      "url": "blob:http://127.0.0.1:8212/a472f359-fec6-45c1-b45d-67529be60e97",
       "status": 200
     },
     {
@@ -923,7 +930,7 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/d6b629db-5177-40c4-a0a5-808072011628",
+      "url": "blob:http://127.0.0.1:8212/d64247f5-0df0-44ea-8137-87939c43eab0",
       "status": 200
     },
     {
@@ -939,11 +946,11 @@
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/bdf35d51-abbc-437c-a5c4-3fcbcc14c356",
+      "url": "blob:http://127.0.0.1:8212/22df8e0b-3161-4648-8208-43de9f470259",
       "status": 200
     },
     {
-      "url": "blob:http://127.0.0.1:8212/c3047517-0f92-492b-a531-24a31ac8ed7c",
+      "url": "blob:http://127.0.0.1:8212/0b45b3b5-d7c1-4d86-af43-dcb46cee7a55",
       "status": 200
     }
   ],
@@ -1034,5 +1041,8 @@
       "nonmask_pixels_unchanged": true,
       "selected_region_area": 39939
     }
-  ]
+  ],
+  "runtime_sha256": {
+    "app.js": "133698711ac8fb8aa53bcc20358e25286394f08619132aa7271bbd09f3fb433d"
+  }
 }

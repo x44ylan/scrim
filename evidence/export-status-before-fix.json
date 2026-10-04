@@ -1,0 +1,12 @@
+{
+  "result": "failed",
+  "verified_at": "2026-10-04T18:45:07.698Z",
+  "error": "loaded image shows the export review instruction",
+  "checks": [
+    "fixture ground truth was authored independently before OCR",
+    "fictional demo loads its real image dimensions"
+  ],
+  "fixtures": [],
+  "exports": [],
+  "errors": []
+}

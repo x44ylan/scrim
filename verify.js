@@ -12,6 +12,15 @@ async page => {
   page.on('response', response => responses.push({ url: response.url(), status: response.status() }));
   await page.addInitScript(() => {
     window.scrimStorageWrites = [];
+    window.scrimVisibleExportStates = [];
+    document.addEventListener('DOMContentLoaded', () => {
+      const result = document.querySelector('#export-result');
+      new MutationObserver(() => {
+        if (result.getClientRects().length && getComputedStyle(result).visibility !== 'hidden') {
+          window.scrimVisibleExportStates.push(result.dataset.state);
+        }
+      }).observe(result, { attributes: true, childList: true, subtree: true });
+    });
     const original = Storage.prototype.setItem;
     Storage.prototype.setItem = function (key, value) {
       window.scrimStorageWrites.push({ key: String(key), length: String(value).length });
@@ -84,6 +93,7 @@ async page => {
     await page.locator('#download-link').waitFor({ state: 'visible', timeout });
     const state = await proof();
     check(state.exportCheck && state.exportCheck.status === 'passed' && state.exportCheck.patternCount === 0, 'actual OCR check of output pixels finishes with zero supported patterns');
+    check(await page.locator('#export-result').isVisible() && (await page.locator('#export-result').innerText()).includes('not a privacy guarantee'), 'completed export result and review limitation are visible');
     const pending = page.waitForEvent('download');
     await page.locator('#download-link').click();
     const download = await pending;
@@ -136,6 +146,7 @@ async page => {
     await page.locator('#demo-btn').click();
     await loaded();
     check((await proof()).dimensions.width === 1120 && (await proof()).dimensions.height === 680, 'fictional demo loads its real image dimensions');
+    check(await page.locator('#export-result').isVisible() && (await page.locator('#export-result').innerText()).includes('Review the whole screenshot'), 'loaded image shows the export review instruction');
     check((await page.locator('body').innerText()).toLowerCase().includes('fictional'), 'demo is visibly labelled fictional');
     await importBytes(images['help.png'], 'private-original-support.png');
     await loaded();
@@ -156,6 +167,8 @@ async page => {
     await page.waitForFunction(() => !window.scrimProof().busy && window.scrimProof().exportCheck.status !== 'pending', null, { timeout });
     const incomplete = await proof();
     check(incomplete.exportCheck.status === 'patterns-remain' && incomplete.exportCheck.patternCount >= 1 && !await page.locator('#download-link').isVisible(), 'actual output OCR finds an unmasked phone and withholds the download');
+    check(await page.locator('#export-result').isVisible() && (await page.locator('#export-result').innerText()).includes('Download withheld'), 'remaining-pattern export result is visible');
+    check(await page.evaluate(() => window.scrimVisibleExportStates.includes('pending')), 'real export check displays its pending result while running');
     await page.locator('#review-list input[type="checkbox"]').nth(phoneIndex).check();
     await page.locator('#review-confirm').check();
     await manual({ x: 50, y: 410, width: 360, height: 44 });
@@ -227,6 +240,7 @@ async page => {
     const cancelled = await proof();
     check(cancelled.dimensions.width === 0 && cancelled.regions.length === 0 && !await page.locator('#download-link').isVisible(), 'Clear cancels in-flight OCR and stale results cannot restore the image');
     check(!(await page.locator('#review-confirm').isChecked()), 'Clear removes review acknowledgement');
+    check(!await page.locator('#export-result').isVisible(), 'Clear hides the previous export result');
 
     failureContext = await page.context().browser().newContext();
     const failurePage = await failureContext.newPage();
