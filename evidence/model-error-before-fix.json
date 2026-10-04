@@ -1,0 +1,221 @@
+{
+  "result": "failed",
+  "verified_at": "2026-10-04T18:29:37.080Z",
+  "error": "locator.waitFor: Timeout 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#error') to be visible\u001b[22m\n\u001b[2m    182 \u00d7 locator resolved to hidden <p hidden=\"\" id=\"error\" role=\"alert\"></p>\u001b[22m\n",
+  "checks": [
+    "fixture ground truth was authored independently before OCR",
+    "fictional demo loads its real image dimensions",
+    "demo is visibly labelled fictional",
+    "native File/DataTransfer import starts with no stale masks",
+    "export requires explicit review acknowledgement",
+    "real local OCR completes without an error",
+    "clean fixture detects both independently known email and phone",
+    "proof records actual OCR inference timing",
+    "detected regions render editable review choices",
+    "real detected contact suggestions start selected",
+    "actual output OCR finds an unmasked phone and withholds the download",
+    "adding a numeric manual mask resets review acknowledgement",
+    "keyboard numeric form creates a real selected manual region",
+    "pointer drawing is verified on a CSS-scaled canvas",
+    "scaled reversed pointer drawing maps to actual image coordinates",
+    "pointer edit resets review acknowledgement",
+    "actual OCR check of output pixels finishes with zero supported patterns",
+    "browser produces a real PNG download",
+    "download has a neutral PNG filename",
+    "edit invalidates a completed export and old download",
+    "wrong extension: explicit import error",
+    "wrong extension: image, masks and revision preserved",
+    "wrong MIME type: explicit import error",
+    "wrong MIME type: image, masks and revision preserved",
+    "corrupt PNG: explicit import error",
+    "corrupt PNG: image, masks and revision preserved",
+    "file above 8MB: explicit import error",
+    "file above 8MB: image, masks and revision preserved",
+    "dimension above 4000: explicit import error",
+    "dimension above 4000: image, masks and revision preserved",
+    "decoded pixels above 4 million: explicit import error",
+    "decoded pixels above 4 million: image, masks and revision preserved",
+    "native JPEG import respects independent EXIF orientation",
+    "real local OCR completes without an error",
+    "split.png: actual precision/recall recorded without requiring perfect detection",
+    "real local OCR completes without an error",
+    "faint.png: actual precision/recall recorded without requiring perfect detection",
+    "hard fixture produces an independently known harmless numeric false positive",
+    "false positive is deselected and acknowledgement resets",
+    "actual OCR check of output pixels finishes with zero supported patterns",
+    "browser produces a real PNG download",
+    "download has a neutral PNG filename",
+    "Clear remains available during actual OCR",
+    "Clear cancels in-flight OCR and stale results cannot restore the image",
+    "Clear removes review acknowledgement"
+  ],
+  "fixtures": [
+    {
+      "fixture": "help.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 2,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "matches": [
+        "email",
+        "phone"
+      ],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "email",
+          "bbox": {
+            "x": 51,
+            "y": 251,
+            "width": 515,
+            "height": 43
+          },
+          "selection": true,
+          "origin": "ocr"
+        },
+        {
+          "id": "r2",
+          "type": "phone",
+          "bbox": {
+            "x": 51,
+            "y": 327,
+            "width": 434,
+            "height": 41
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 641.2000000476837,
+        "exportMs": null
+      },
+      "wall_ms": 683
+    },
+    {
+      "fixture": "split.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 2,
+      "precision": 0,
+      "recall": 0,
+      "matches": [],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "phone",
+          "bbox": {
+            "x": 50,
+            "y": 421,
+            "width": 147,
+            "height": 33
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 488.2999999523163,
+        "exportMs": null
+      },
+      "wall_ms": 530
+    },
+    {
+      "fixture": "faint.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 2,
+      "precision": 0,
+      "recall": 0,
+      "matches": [],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "phone",
+          "bbox": {
+            "x": 48,
+            "y": 375,
+            "width": 387,
+            "height": 31
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 504.7000000476837,
+        "exportMs": null
+      },
+      "wall_ms": 552
+    }
+  ],
+  "exports": [
+    {
+      "file": "clean.png",
+      "fixture": "help.png",
+      "dimensions": {
+        "width": 1120,
+        "height": 680
+      },
+      "regions": [
+        {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        {
+          "x": 50,
+          "y": 410,
+          "width": 360,
+          "height": 44
+        },
+        {
+          "x": 939,
+          "y": 585,
+          "width": 101,
+          "height": 45
+        }
+      ],
+      "check": {
+        "status": "passed",
+        "patternCount": 0,
+        "types": [],
+        "revision": 7
+      }
+    },
+    {
+      "file": "faint.png",
+      "fixture": "faint.png",
+      "dimensions": {
+        "width": 1120,
+        "height": 680
+      },
+      "regions": [
+        {
+          "x": 45,
+          "y": 200,
+          "width": 1050,
+          "height": 230
+        }
+      ],
+      "check": {
+        "status": "passed",
+        "patternCount": 0,
+        "types": [],
+        "revision": 15
+      }
+    }
+  ],
+  "errors": []
+}

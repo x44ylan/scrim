@@ -1,0 +1,167 @@
+{
+  "fictional": true,
+  "ground_truth_method": "Rendered alpha glyph bounds from independently authored text; written before any OCR run.",
+  "generator": "fixtures/generate.py",
+  "pillow_version": "12.1.1",
+  "fonts": [
+    {
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+      "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+    },
+    {
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+      "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "help.png",
+      "width": 1120,
+      "height": 680,
+      "sha256": "6b75e9061200c352cf9aa618a53f243572bbfa7bc71ecf8b67bc5aa1a5bf1a09",
+      "transparent_source": false,
+      "note": "Clean contact lines. Badge code is deliberately outside supported detection patterns.",
+      "contacts": [
+        {
+          "type": "email",
+          "group": "email",
+          "text": "Email: alex.river@example.com",
+          "bbox": {
+            "x": 57,
+            "y": 257,
+            "width": 503,
+            "height": 31
+          },
+          "font_size": 32
+        },
+        {
+          "type": "phone",
+          "group": "phone",
+          "text": "Phone: +1 (202) 555-0147",
+          "bbox": {
+            "x": 57,
+            "y": 333,
+            "width": 422,
+            "height": 29
+          },
+          "font_size": 32
+        }
+      ],
+      "non_sensitive_regions": [
+        {
+          "text": "Badge code: 314159",
+          "bbox": {
+            "x": 56,
+            "y": 416,
+            "width": 287,
+            "height": 27
+          }
+        }
+      ]
+    },
+    {
+      "file": "split.png",
+      "width": 1120,
+      "height": 680,
+      "sha256": "129363a56eb15aebd8663e8b2ded0f4fd6ba42086aba562a0946c3bb8c558acb",
+      "transparent_source": false,
+      "note": "Two independently known contacts with fragmented glyph regions; score a contact only if every fragment is covered by suggestions.",
+      "contacts": [
+        {
+          "type": "email",
+          "group": "email",
+          "text": "casey.fern@",
+          "bbox": {
+            "x": 55,
+            "y": 242,
+            "width": 173,
+            "height": 28
+          },
+          "font_size": 29
+        },
+        {
+          "type": "email",
+          "group": "email",
+          "text": "example.com",
+          "bbox": {
+            "x": 55,
+            "y": 291,
+            "width": 193,
+            "height": 28
+          },
+          "font_size": 29
+        },
+        {
+          "type": "phone",
+          "group": "phone",
+          "text": "+1 (202)",
+          "bbox": {
+            "x": 57,
+            "y": 377,
+            "width": 125,
+            "height": 26
+          },
+          "font_size": 29
+        },
+        {
+          "type": "phone",
+          "group": "phone",
+          "text": "555-0182",
+          "bbox": {
+            "x": 56,
+            "y": 427,
+            "width": 135,
+            "height": 21
+          },
+          "font_size": 29
+        }
+      ],
+      "non_sensitive_regions": []
+    },
+    {
+      "file": "faint.png",
+      "width": 1120,
+      "height": 680,
+      "sha256": "59dd1ad4468fdda90f0fa34ccf4c1c68053b529e092f63f46fae27a859747e96",
+      "transparent_source": true,
+      "note": "Contains a harmless ten-digit ticket reference as a potential false positive; source outside card is transparent.",
+      "contacts": [
+        {
+          "type": "email",
+          "group": "email",
+          "text": "Faint email: jordan.moss@example.com",
+          "bbox": {
+            "x": 55,
+            "y": 221,
+            "width": 319,
+            "height": 15
+          },
+          "font_size": 16
+        },
+        {
+          "type": "phone",
+          "group": "phone",
+          "text": "Faint phone: +1 (202) 555-0196",
+          "bbox": {
+            "x": 55,
+            "y": 279,
+            "width": 257,
+            "height": 15
+          },
+          "font_size": 16
+        }
+      ],
+      "non_sensitive_regions": [
+        {
+          "text": "Ticket reference: 9876543210",
+          "bbox": {
+            "x": 53,
+            "y": 381,
+            "width": 377,
+            "height": 19
+          }
+        }
+      ]
+    }
+  ]
+}

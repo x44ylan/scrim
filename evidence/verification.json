@@ -1,0 +1,1038 @@
+{
+  "result": "passed",
+  "verified_at": "2026-10-04T18:33:55.257Z",
+  "scope": "Fictional fixtures; real local Tesseract LSTM OCR; native files, browser downloads, cancellation, missing-model handling and offline reload.",
+  "scaffolding_reuse": "Playwright CLI session/result/download pattern from Shiftproof only; no product code reused.",
+  "ground_truth": {
+    "fictional": true,
+    "ground_truth_method": "Rendered alpha glyph bounds from independently authored text; written before any OCR run.",
+    "generator": "fixtures/generate.py",
+    "pillow_version": "12.1.1",
+    "fonts": [
+      {
+        "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+      },
+      {
+        "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+      }
+    ],
+    "fixtures": [
+      {
+        "file": "help.png",
+        "width": 1120,
+        "height": 680,
+        "sha256": "6b75e9061200c352cf9aa618a53f243572bbfa7bc71ecf8b67bc5aa1a5bf1a09",
+        "transparent_source": false,
+        "note": "Clean contact lines. Badge code is deliberately outside supported detection patterns.",
+        "contacts": [
+          {
+            "type": "email",
+            "group": "email",
+            "text": "Email: alex.river@example.com",
+            "bbox": {
+              "x": 57,
+              "y": 257,
+              "width": 503,
+              "height": 31
+            },
+            "font_size": 32
+          },
+          {
+            "type": "phone",
+            "group": "phone",
+            "text": "Phone: +1 (202) 555-0147",
+            "bbox": {
+              "x": 57,
+              "y": 333,
+              "width": 422,
+              "height": 29
+            },
+            "font_size": 32
+          }
+        ],
+        "non_sensitive_regions": [
+          {
+            "text": "Badge code: 314159",
+            "bbox": {
+              "x": 56,
+              "y": 416,
+              "width": 287,
+              "height": 27
+            }
+          }
+        ]
+      },
+      {
+        "file": "split.png",
+        "width": 1120,
+        "height": 680,
+        "sha256": "129363a56eb15aebd8663e8b2ded0f4fd6ba42086aba562a0946c3bb8c558acb",
+        "transparent_source": false,
+        "note": "Two independently known contacts with fragmented glyph regions; score a contact only if every fragment is covered by suggestions.",
+        "contacts": [
+          {
+            "type": "email",
+            "group": "email",
+            "text": "casey.fern@",
+            "bbox": {
+              "x": 55,
+              "y": 242,
+              "width": 173,
+              "height": 28
+            },
+            "font_size": 29
+          },
+          {
+            "type": "email",
+            "group": "email",
+            "text": "example.com",
+            "bbox": {
+              "x": 55,
+              "y": 291,
+              "width": 193,
+              "height": 28
+            },
+            "font_size": 29
+          },
+          {
+            "type": "phone",
+            "group": "phone",
+            "text": "+1 (202)",
+            "bbox": {
+              "x": 57,
+              "y": 377,
+              "width": 125,
+              "height": 26
+            },
+            "font_size": 29
+          },
+          {
+            "type": "phone",
+            "group": "phone",
+            "text": "555-0182",
+            "bbox": {
+              "x": 56,
+              "y": 427,
+              "width": 135,
+              "height": 21
+            },
+            "font_size": 29
+          }
+        ],
+        "non_sensitive_regions": []
+      },
+      {
+        "file": "faint.png",
+        "width": 1120,
+        "height": 680,
+        "sha256": "59dd1ad4468fdda90f0fa34ccf4c1c68053b529e092f63f46fae27a859747e96",
+        "transparent_source": true,
+        "note": "Contains a harmless ten-digit ticket reference as a potential false positive; source outside card is transparent.",
+        "contacts": [
+          {
+            "type": "email",
+            "group": "email",
+            "text": "Faint email: jordan.moss@example.com",
+            "bbox": {
+              "x": 55,
+              "y": 221,
+              "width": 319,
+              "height": 15
+            },
+            "font_size": 16
+          },
+          {
+            "type": "phone",
+            "group": "phone",
+            "text": "Faint phone: +1 (202) 555-0196",
+            "bbox": {
+              "x": 55,
+              "y": 279,
+              "width": 257,
+              "height": 15
+            },
+            "font_size": 16
+          }
+        ],
+        "non_sensitive_regions": [
+          {
+            "text": "Ticket reference: 9876543210",
+            "bbox": {
+              "x": 53,
+              "y": 381,
+              "width": 377,
+              "height": 19
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "missing_model_responses": [
+    "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz",
+    "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz"
+  ],
+  "checks": [
+    "fixture ground truth was authored independently before OCR",
+    "fictional demo loads its real image dimensions",
+    "demo is visibly labelled fictional",
+    "native File/DataTransfer import starts with no stale masks",
+    "export requires explicit review acknowledgement",
+    "real local OCR completes without an error",
+    "clean fixture detects both independently known email and phone",
+    "proof records actual OCR inference timing",
+    "detected regions render editable review choices",
+    "real detected contact suggestions start selected",
+    "actual output OCR finds an unmasked phone and withholds the download",
+    "adding a numeric manual mask resets review acknowledgement",
+    "keyboard numeric form creates a real selected manual region",
+    "pointer drawing is verified on a CSS-scaled canvas",
+    "scaled reversed pointer drawing maps to actual image coordinates",
+    "pointer edit resets review acknowledgement",
+    "actual OCR check of output pixels finishes with zero supported patterns",
+    "browser produces a real PNG download",
+    "download has a neutral PNG filename",
+    "edit invalidates a completed export and old download",
+    "wrong extension: explicit import error",
+    "wrong extension: image, masks and revision preserved",
+    "wrong MIME type: explicit import error",
+    "wrong MIME type: image, masks and revision preserved",
+    "corrupt PNG: explicit import error",
+    "corrupt PNG: image, masks and revision preserved",
+    "file above 8MB: explicit import error",
+    "file above 8MB: image, masks and revision preserved",
+    "dimension above 4000: explicit import error",
+    "dimension above 4000: image, masks and revision preserved",
+    "decoded pixels above 4 million: explicit import error",
+    "decoded pixels above 4 million: image, masks and revision preserved",
+    "native JPEG import respects independent EXIF orientation",
+    "real local OCR completes without an error",
+    "split.png: actual precision/recall recorded without requiring perfect detection",
+    "real local OCR completes without an error",
+    "faint.png: actual precision/recall recorded without requiring perfect detection",
+    "hard fixture produces an independently known harmless numeric false positive",
+    "false positive is deselected and acknowledgement resets",
+    "actual OCR check of output pixels finishes with zero supported patterns",
+    "browser produces a real PNG download",
+    "download has a neutral PNG filename",
+    "Clear remains available during actual OCR",
+    "Clear cancels in-flight OCR and stale results cannot restore the image",
+    "Clear removes review acknowledgement",
+    "missing local language asset produces an actual retryable model/cache error",
+    "failed model loading preserves the source image and manual mask",
+    "real local OCR completes without an error",
+    "390px layout has no horizontal overflow",
+    "mobile-width review acknowledgement works from the keyboard",
+    "reload does not persist uploaded image pixels or OCR regions",
+    "real local OCR completes without an error",
+    "offline reload invokes the real cached neural model and detects both contacts",
+    "actual OCR check of output pixels finishes with zero supported patterns",
+    "browser produces a real PNG download",
+    "download has a neutral PNG filename",
+    "workflow writes no image or OCR text to Web Storage",
+    "OCR cache is disabled and workflow creates no IndexedDB database",
+    "image workflow sends no server upload or mutation request",
+    "no successful third-party runtime response during scan, export or offline workflow",
+    "browser workflows produce no uncaught JavaScript errors",
+    "Independent downloaded PNG pixel, opacity, dimensions and chunk verification passes"
+  ],
+  "fixtures": [
+    {
+      "fixture": "help.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 2,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "matches": [
+        "email",
+        "phone"
+      ],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "email",
+          "bbox": {
+            "x": 51,
+            "y": 251,
+            "width": 515,
+            "height": 43
+          },
+          "selection": true,
+          "origin": "ocr"
+        },
+        {
+          "id": "r2",
+          "type": "phone",
+          "bbox": {
+            "x": 51,
+            "y": 327,
+            "width": 434,
+            "height": 41
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 627.5,
+        "exportMs": null
+      },
+      "wall_ms": 658
+    },
+    {
+      "fixture": "split.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 2,
+      "precision": 0,
+      "recall": 0,
+      "matches": [],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "phone",
+          "bbox": {
+            "x": 50,
+            "y": 421,
+            "width": 147,
+            "height": 33
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 453.3000000715256,
+        "exportMs": null
+      },
+      "wall_ms": 493
+    },
+    {
+      "fixture": "faint.png",
+      "definition": "One-to-one contact detection; predicted same-type rectangle must cover at least 90% of every independently rendered glyph region of that contact. Extra predicted rectangles count as false positives.",
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 2,
+      "precision": 0,
+      "recall": 0,
+      "matches": [],
+      "predictions": [
+        {
+          "id": "r1",
+          "type": "phone",
+          "bbox": {
+            "x": 48,
+            "y": 375,
+            "width": 387,
+            "height": 31
+          },
+          "selection": true,
+          "origin": "ocr"
+        }
+      ],
+      "timings": {
+        "scanMs": 470.39999997615814,
+        "exportMs": null
+      },
+      "wall_ms": 518
+    }
+  ],
+  "exports": [
+    {
+      "file": "clean.png",
+      "fixture": "help.png",
+      "dimensions": {
+        "width": 1120,
+        "height": 680
+      },
+      "regions": [
+        {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        {
+          "x": 50,
+          "y": 410,
+          "width": 360,
+          "height": 44
+        },
+        {
+          "x": 939,
+          "y": 585,
+          "width": 101,
+          "height": 45
+        }
+      ],
+      "check": {
+        "status": "passed",
+        "patternCount": 0,
+        "types": [],
+        "revision": 7
+      }
+    },
+    {
+      "file": "faint.png",
+      "fixture": "faint.png",
+      "dimensions": {
+        "width": 1120,
+        "height": 680
+      },
+      "regions": [
+        {
+          "x": 45,
+          "y": 200,
+          "width": 1050,
+          "height": 230
+        }
+      ],
+      "check": {
+        "status": "passed",
+        "patternCount": 0,
+        "types": [],
+        "revision": 15
+      }
+    },
+    {
+      "file": "offline.png",
+      "fixture": "help.png",
+      "dimensions": {
+        "width": 1120,
+        "height": 680
+      },
+      "regions": [
+        {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        }
+      ],
+      "check": {
+        "status": "passed",
+        "patternCount": 0,
+        "types": [],
+        "revision": 2
+      }
+    }
+  ],
+  "screenshots": [
+    "scan.png",
+    "export.png",
+    "mobile.png"
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8212/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/ground-truth.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/split.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/faint.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/93c30916-965a-4552-b12d-deaa569bbb85",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/5d906999-af97-4042-98ed-9bbf3a18fee1",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/c4b374cf-a703-46b1-98cb-c8207a31ed62",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0ebe2263-d3d7-42e7-acca-797f307bf94c",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b7099091-f813-40d2-8346-02c03391b391",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b550e032-7974-4c7e-96d2-95e1ab00b4db",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/bd71c299-22e5-47e7-aab4-bfaa32c807d8",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/e650e583-800b-4871-92b5-53636a8e73e8",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/432883bb-dde5-4936-be00-6017d63fbc38",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/fef0b97f-6015-44da-8864-33ea34bbcf2d",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/5916504d-9a98-4dab-8fc9-13501bcc79de",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0b118359-e015-4ce9-9ab0-13de2a4a43a7",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/sw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/index.html",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8213/ad198915-5a19-4d0d-b34e-c4a5f0bb3380",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0c04b577-2a64-4684-9435-ba523db546fd",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/d6b629db-5177-40c4-a0a5-808072011628",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/bdf35d51-abbc-437c-a5c4-3fcbcc14c356",
+      "method": "GET"
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/c3047517-0f92-492b-a531-24a31ac8ed7c",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8212/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/app.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/ground-truth.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/split.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/faint.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/93c30916-965a-4552-b12d-deaa569bbb85",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/5d906999-af97-4042-98ed-9bbf3a18fee1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/c4b374cf-a703-46b1-98cb-c8207a31ed62",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0ebe2263-d3d7-42e7-acca-797f307bf94c",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b7099091-f813-40d2-8346-02c03391b391",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/b550e032-7974-4c7e-96d2-95e1ab00b4db",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/bd71c299-22e5-47e7-aab4-bfaa32c807d8",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/e650e583-800b-4871-92b5-53636a8e73e8",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/432883bb-dde5-4936-be00-6017d63fbc38",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/fef0b97f-6015-44da-8864-33ea34bbcf2d",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/5916504d-9a98-4dab-8fc9-13501bcc79de",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0b118359-e015-4ce9-9ab0-13de2a4a43a7",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/app.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/sw.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/app.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/index.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8213/ad198915-5a19-4d0d-b34e-c4a5f0bb3380",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz",
+      "status": 503
+    },
+    {
+      "url": "http://127.0.0.1:8213/vendor/lang/eng.traineddata.gz",
+      "status": 503
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/0c04b577-2a64-4684-9435-ba523db546fd",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/style.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/app.js",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/d6b629db-5177-40c4-a0a5-808072011628",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8212/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/bdf35d51-abbc-437c-a5c4-3fcbcc14c356",
+      "status": 200
+    },
+    {
+      "url": "blob:http://127.0.0.1:8212/c3047517-0f92-492b-a531-24a31ac8ed7c",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "pixel_checks": [
+    {
+      "file": "clean.png",
+      "sha256": "9e105e575bac3b7b44ad4e173f5cadc4bc59bc020f7165d8b0e0bc9f0bc0d5cb",
+      "dimensions": [
+        1120,
+        680
+      ],
+      "chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "opaque_alpha": true,
+      "selected_regions_uniform": true,
+      "nonmask_pixels_unchanged": true,
+      "selected_region_area": 60324
+    },
+    {
+      "file": "faint.png",
+      "sha256": "2a067ebe04d9378f5ae1dd2a85122003d18f7d79f533a569dbfa52ccb4b7d60b",
+      "dimensions": [
+        1120,
+        680
+      ],
+      "chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "opaque_alpha": true,
+      "selected_regions_uniform": true,
+      "nonmask_pixels_unchanged": true,
+      "selected_region_area": 241500
+    },
+    {
+      "file": "offline.png",
+      "sha256": "b2787858024ca55feeb16543d7317287ad6ec86ac38a34ea4bfee15a7a4e2ce9",
+      "dimensions": [
+        1120,
+        680
+      ],
+      "chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "opaque_alpha": true,
+      "selected_regions_uniform": true,
+      "nonmask_pixels_unchanged": true,
+      "selected_region_area": 39939
+    }
+  ]
+}
