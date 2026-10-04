@@ -1,0 +1,541 @@
+{
+  "result": "passed",
+  "verified_at": "2026-10-04T18:54:40.559Z",
+  "origin": "https://x44ylan.com/scrim/",
+  "scope": "Focused production browser proof only: real local OCR, manual badge mask, visible checked PNG download, actual walkthrough playback, offline reload/scan and same-host runtime responses.",
+  "checks": [
+    "public application responds HTTP200 in a clean isolated browser",
+    "runtime app.js SHA256 matches the accepted implementation",
+    "published clean fixture matches independent ground-truth source bytes",
+    "published walkthrough SHA256 matches the final recorded video",
+    "public real local LSTM scan covers both independently known clean contacts",
+    "actual public scan records inference timing and selected suggestions",
+    "public numeric form adds a real opaque badge mask",
+    "public PNG export performs actual OCR on its output pixels",
+    "completed public export check and its result are visible to the user",
+    "public workflow saves a real neutral-name PNG download",
+    "production CSP restricts scripts to the application origin",
+    "hosting-injected analytics script is blocked by enforced CSP",
+    "published walkthrough page responds HTTP200",
+    "published video metadata and actual decoded playback succeed",
+    "public offline reload retains the app without persisting uploaded image state",
+    "offline production reload completes another real local LSTM scan",
+    "every successful runtime network response comes from the same production host",
+    "public image workflow sends no upload or server mutation",
+    "public workflows produce no uncaught JavaScript error",
+    "Actual saved production PNG signature and dimensions match the browser proof"
+  ],
+  "app_sha256": "133698711ac8fb8aa53bcc20358e25286394f08619132aa7271bbd09f3fb433d",
+  "fixture_sha256": "6b75e9061200c352cf9aa618a53f243572bbfa7bc71ecf8b67bc5aa1a5bf1a09",
+  "video_sha256": "be60cd937599cd141e677c4e80f50b73e7a565fd67f4e704db64bfd813c1611a",
+  "demo": {
+    "duration": 86.75,
+    "width": 1280,
+    "height": 1030,
+    "current_time": 0.321771,
+    "decoded_frames": 11,
+    "error": null
+  },
+  "scan": {
+    "phase": "review",
+    "revision": 2,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      }
+    ],
+    "timings": {
+      "scanMs": 1968.7999999523163,
+      "exportMs": null
+    },
+    "exportCheck": {
+      "status": "idle",
+      "patternCount": null,
+      "types": [],
+      "revision": null
+    },
+    "reviewAcknowledged": false,
+    "readyDownload": false,
+    "busy": false
+  },
+  "exported": {
+    "phase": "export-ready",
+    "revision": 3,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r3",
+        "type": "manual",
+        "bbox": {
+          "x": 50,
+          "y": 410,
+          "width": 360,
+          "height": 44
+        },
+        "selection": true,
+        "origin": "manual"
+      }
+    ],
+    "timings": {
+      "scanMs": 1968.7999999523163,
+      "exportMs": 274.09999990463257
+    },
+    "exportCheck": {
+      "status": "passed",
+      "patternCount": 0,
+      "types": [],
+      "revision": 3
+    },
+    "reviewAcknowledged": true,
+    "readyDownload": true,
+    "busy": false
+  },
+  "offline": {
+    "phase": "review",
+    "revision": 2,
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "regions": [
+      {
+        "id": "r1",
+        "type": "email",
+        "bbox": {
+          "x": 51,
+          "y": 251,
+          "width": 515,
+          "height": 43
+        },
+        "selection": true,
+        "origin": "ocr"
+      },
+      {
+        "id": "r2",
+        "type": "phone",
+        "bbox": {
+          "x": 51,
+          "y": 327,
+          "width": 434,
+          "height": 41
+        },
+        "selection": true,
+        "origin": "ocr"
+      }
+    ],
+    "timings": {
+      "scanMs": 558.2000000476837,
+      "exportMs": null
+    },
+    "exportCheck": {
+      "status": "idle",
+      "patternCount": null,
+      "types": [],
+      "revision": null
+    },
+    "reviewAcknowledged": false,
+    "readyDownload": false,
+    "busy": false
+  },
+  "hosting_analytics": {
+    "injected_scripts": [
+      "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    ],
+    "outcome": "blocked-by-enforced-csp",
+    "csp": {
+      "policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' blob: data:; worker-src 'self'; connect-src 'self' blob: data:; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'",
+      "violations": [
+        {
+          "blockedURI": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+          "directive": "script-src-elem",
+          "disposition": "enforce"
+        }
+      ],
+      "scripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+      ]
+    }
+  },
+  "download": {
+    "file": "public-export.png",
+    "suggested_filename": "scrim-redacted.png",
+    "dimensions": {
+      "width": 1120,
+      "height": 680
+    },
+    "sha256": "aa754f9daa55aa43330949903cb4003271fb85e46a7d39d1fb07b8a2ea67d4a0",
+    "bytes": 45365
+  },
+  "screenshot": "public-screenshot.png",
+  "requests": [
+    {
+      "url": "https://x44ylan.com/scrim/",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/sw.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/index.html",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/ground-truth.json",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "blob:https://x44ylan.com/744b7d57-7f21-4cac-adae-f7d7e0876491",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    },
+    {
+      "url": "blob:https://x44ylan.com/fa0388a5-c0db-4707-828c-ff49eb2ea6c7",
+      "method": "GET"
+    },
+    {
+      "url": "blob:https://x44ylan.com/fe18be7d-0a4e-4c21-916b-5f269e212cb2",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.html",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "method": "GET"
+    },
+    {
+      "url": "blob:https://x44ylan.com/c5f9d7e8-67cd-4c07-8beb-63710ddc57da",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://x44ylan.com/scrim/",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/index.html",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/ground-truth.json",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "blob:https://x44ylan.com/744b7d57-7f21-4cac-adae-f7d7e0876491",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    },
+    {
+      "url": "blob:https://x44ylan.com/fa0388a5-c0db-4707-828c-ff49eb2ea6c7",
+      "status": 200
+    },
+    {
+      "url": "blob:https://x44ylan.com/fe18be7d-0a4e-4c21-916b-5f269e212cb2",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.html",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "status": 206
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "status": 206
+    },
+    {
+      "url": "https://x44ylan.com/scrim/",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/tesseract.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/fixtures/help.png",
+      "status": 200
+    },
+    {
+      "url": "blob:https://x44ylan.com/c5f9d7e8-67cd-4c07-8beb-63710ddc57da",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/worker.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/core/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "status": 200
+    },
+    {
+      "url": "https://x44ylan.com/scrim/vendor/lang/eng.traineddata.gz",
+      "status": 200
+    }
+  ],
+  "request_failures": [
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "reason": "csp"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "reason": "csp"
+    },
+    {
+      "url": "https://x44ylan.com/scrim/demo.webm",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "errors": []
+}

@@ -19,7 +19,7 @@ browsers = sorted((Path.home()/'.cache/ms-playwright').glob('chromium-*/chrome-l
 if not browsers: raise SystemExit('Install Playwright Chromium before verifying')
 Path(sys.argv[1]).write_text(json.dumps({'browser': {'browserName': 'chromium', 'isolated': True, 'launchOptions': {'executablePath': str(browsers[0]), 'headless': True}, 'contextOptions': {'viewport': {'width': 1200, 'height': 980}, 'reducedMotion': 'reduce', 'acceptDownloads': True}}}))
 PY
-playwright-cli -s=scrim-public open https://x44ylan.com/scrim/ --config="$config"
+playwright-cli -s=scrim-public open about:blank --config="$config"
 playwright-cli -s=scrim-public run-code --filename=verify-public.js > "$artifacts/public-verification-browser.log"
 playwright-cli -s=scrim-public eval 'window.scrimPublicVerification' > "$result"
 python3 - "$result" "$artifacts" <<'PY'
